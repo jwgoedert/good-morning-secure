@@ -14,13 +14,18 @@
       <img class="img-responsive topRightBoxes" src="assets/images/CraigD-Image-TopRight.jpg">
     </div>
     <div class="topRightBoxes">
+      
       <p class="lowerBox">I want to add my own personal good morning.</p>
       <a>Link to Something</a>
     </div>
   </div>
   <div class="row inputColumns">
-      <div class="col-md-4 sectionHeight">Country</div>
-      <div class="col-md-4 sectionHeight">Time</div>
+    <div class="col-md-4 sectionHeight">Country{{location}}
+      <ng4geo-autocomplete (componentCallback)="autoCompleteCallback($event)"></ng4geo-autocomplete>'
+    </div>
+    
+      <div class="col-md-4 sectionHeight">{{ dateObj | date:'shortTime' }}
+      </div>
       <div class="col-md-4 sectionHeight">Record/Submit</div>
       <div class="col-md-12 sectionHeight boundingBox">Thank You and Good Morning</div>
       <div class="col-md-6 sectionHeight">
