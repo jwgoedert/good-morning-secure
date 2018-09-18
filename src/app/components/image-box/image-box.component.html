@@ -12,16 +12,16 @@
   <div class="col-md-5 topRightBoxes">
     <div>
       <img class="img-responsive boundingBox topRightBoxes" src="assets/images/CraigD-Image-TopRight.jpg">
-      <div class="overlayText centered">
-          <div class="splashTitle">
+      <div class="overlayNoBorder centered">
+          <div class="normalTitle">
               <p>Hi</p>
               <p class="splashText">Global Good Morning is a project<br> collecting good mornings from <br> around the world.</p>
-          </div>
+            <button (click)="changeText()"></button>
+            </div>
         </div>
     </div>
-    <div class="topRightBoxes">
-      
-      <p class="lowerBox">I want to add my own personal good morning.</p>
+    <div class="topRightBoxes lowerBox">
+      <p class="lowerPadding">I want<br> to add<br> my own<br> personal<br> good <br>morning.</p>
       <a>Link to Something</a>
     </div>
   </div>
@@ -33,8 +33,23 @@
       <div class="col-md-4 sectionHeight">{{ dateObj | date:'shortTime' }}
       </div>
       <div class="col-md-4 sectionHeight">Record/Submit</div>
-      <div class="col-md-12 sectionHeight boundingBox">Thank You and Good Morning</div>
-      <div class="col-md-6 sectionHeight">
+      <!-- <div class="col-md-12 sectionHeight boundingBox container">
+        <img class="img-responsive" src="assets/images/CraigD-image-email.jpg">        
+        <div class="overlayText splashTitle">
+          Thank You and Good Morning
+        </div>
+      </div> -->
+      <div class="container col-md-12">
+          <img class="img-responsive boundingBox mainImage" src="assets/images/CraigD-image-email.jpg">
+          <div class="overlayNoBorder centered">
+            <div class="normalTitle">
+                <p>Thank You and Good Morning</p>
+                <!-- <p class="splashText">A good morning is anything you say<br>to greet your day. It's the first greeting.</p> -->
+            </div>
+          </div>
+        </div>
+
+      <div class="col-md-6 sectionHeight normalTitle">
         <p>About</p>
         <p>The</p>
         <p>Project</p>

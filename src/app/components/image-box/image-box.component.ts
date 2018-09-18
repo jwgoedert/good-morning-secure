@@ -51,4 +51,7 @@ export class ImageBoxComponent implements OnInit {
     } );
     console.log('CurrentLocation', self.currentLocation);
   }
+  changeText(){
+    console.log('changingText');
+  }
 }
