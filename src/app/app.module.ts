@@ -7,11 +7,13 @@ import { Ng4GeoautocompleteModule } from 'ng4-geoautocomplete';
 
 import { AppComponent } from './app.component';
 import { ImageBoxComponent } from './components/image-box/image-box.component';
+import { InputSectionsComponent } from './input-sections/input-sections.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ImageBoxComponent
+    ImageBoxComponent,
+    InputSectionsComponent
   ],
   imports: [
     NgbModule.forRoot(),

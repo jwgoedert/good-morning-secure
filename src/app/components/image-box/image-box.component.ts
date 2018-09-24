@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef, Input } from '@angular/core';
 import { GeoLocationService } from '../../services/geo-location.service';
 
 @Component({
@@ -9,8 +9,12 @@ import { GeoLocationService } from '../../services/geo-location.service';
 export class ImageBoxComponent implements OnInit {
   public dateObj = Date.now();
   public location;
+  public time;
+  public recording;
+  public message;
   errorMsg: string; 
   currentLocation: Coordinates = null;
+  public inputDisplayArray: Array<any>;
   constructor( private ref: ChangeDetectorRef,
     private geoLocationService: GeoLocationService) {
 
@@ -18,6 +22,7 @@ export class ImageBoxComponent implements OnInit {
 
   ngOnInit() {
     console.log('date', this.dateObj);
+    // this.location = 'Location Test';
     this.searchByCurrent();
     this.getCurrentLocation();
   }
@@ -51,7 +56,48 @@ export class ImageBoxComponent implements OnInit {
     } );
     console.log('CurrentLocation', self.currentLocation);
   }
+
   changeText(){
     console.log('changingText');
+  }
+
+  receiveMessage($event){
+    this.message = $event;
+    console.log('message', this.message);
+  }
+
+  getTime($event){
+    this.time = $event
+
+    console.log('time', this.time);
+  }
+
+  getLocation($event) {
+    this.location = $event;
+    console.log('location', this.location);
+  }
+
+  getRecording($event) {
+    this.recording = $event;
+    console.log('recording', this.recording);
+  }
+
+  setInitialFields() {
+    return [{
+      step:1,
+      prompt:'Tell us where you are',
+      inputBox:'this.location'
+    },
+    {
+      step:2,
+      prompt:'Tell us when you wake up',
+      inputBox:'this.time'
+    },
+    {
+      step:3,
+      prompt:'Say good morning',
+      inputBox:''
+    },
+  ]
   }
 }

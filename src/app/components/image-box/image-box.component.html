@@ -16,7 +16,6 @@
           <div class="normalTitle">
               <p>Hi</p>
               <p class="splashText">Global Good Morning is a project<br> collecting good mornings from <br> around the world.</p>
-            <button (click)="changeText()"></button>
             </div>
         </div>
     </div>
@@ -26,13 +25,49 @@
     </div>
   </div>
   <div class="row inputColumns">
-    <div class="col-md-4 sectionHeight">Country{{location}}
+    <!-- <div class="col-md-4 sectionHeight inputColumns">
+      <h1>STEP</h1>
+      <h1 class="circleText">1</h1>
+      <p>Tell us where you are.</p>
+      Country{{location}}
       <ng4geo-autocomplete (componentCallback)="autoCompleteCallback($event)"></ng4geo-autocomplete>'
+    </div> -->
+    <!-- <div class="col-md-4 sectionHeight inputColumns">
+      <app-input-sections (messageEvent)="receiveMessage($event)"></app-input-sections>
+    </div> -->
+    <div class="col-md-4 sectionHeight inputColumns">
+      <app-input-sections 
+        (locationEvent)="getLocation($event)"
+        [locTest]="location"
+      >
+      </app-input-sections>
     </div>
-    
-      <div class="col-md-4 sectionHeight">{{ dateObj | date:'shortTime' }}
+    <div class="col-md-4 sectionHeight inputColumns">
+      <app-input-sections 
+        (timeEvent)="getTime($event)"
+      >
+      </app-input-sections>
+    </div>
+    <div class="col-md-4 sectionHeight inputColumns">
+      <app-input-sections 
+        (recordingEvent)="getRecording($event)"
+      >
+      </app-input-sections>
+    </div>
+<!-- 
+    <div class="col-md-4 sectionHeight inputColumns">
+        <h1>STEP</h1>
+        <h1 class="circleText">2</h1>
+        <p>Tell us when you wake up.</p>
+      {{ dateObj | date:'shortTime' }}
       </div>
-      <div class="col-md-4 sectionHeight">Record/Submit</div>
+      <div class="col-md-4 sectionHeight inputColumns">
+          <h1>STEP</h1>
+          <h1 class="circleText">1</h1>
+          <p>Say good morning.</p>
+        Record/Submit
+      </div> -->
+
       <!-- <div class="col-md-12 sectionHeight boundingBox container">
         <img class="img-responsive" src="assets/images/CraigD-image-email.jpg">        
         <div class="overlayText splashTitle">

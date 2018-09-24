@@ -86,9 +86,12 @@
 }
 .circleText {
     border-radius: 50%;
-    border-color: white;
-    border-width: 1px;
+    /* border-color: white;
+    border-width: 1px; */
 }
+/* .inputColumns {
+    border-right: solid 2px white;
+} */
 .inputColumns {
     positiong:relative;
     /* border-right: solid 2px white; */
@@ -105,6 +108,6 @@
     top: 0; 
     
   
-    background-color: #000000; 
+    background-color: white; 
  
 }
