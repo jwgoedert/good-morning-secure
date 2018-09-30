@@ -21,6 +21,14 @@ export class InputSectionsComponent implements OnInit {
   
   @Input() locTest: string;
 
+  @Input() locPrompt: string;
+
+  @Input() timePrompt: string;
+
+  @Input() recordingPrompt: string;
+  @Input() prompt: string;
+
+
   constructor() { }
 
   ngOnInit() {

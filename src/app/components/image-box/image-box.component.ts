@@ -12,8 +12,11 @@ export class ImageBoxComponent implements OnInit {
   public time;
   public recording;
   public message;
-  errorMsg: string; 
-  currentLocation: Coordinates = null;
+  public inputFields;
+  public slideshowText;
+  public slideIndex = 0;
+  public errorMsg: string; 
+  public currentLocation: Coordinates = null;
   public inputDisplayArray: Array<any>;
   constructor( private ref: ChangeDetectorRef,
     private geoLocationService: GeoLocationService) {
@@ -25,6 +28,7 @@ export class ImageBoxComponent implements OnInit {
     // this.location = 'Location Test';
     this.searchByCurrent();
     this.getCurrentLocation();
+    this.setInitialFields();
   }
   getCurrentLocation() {
     console.log('location', this.location);
@@ -83,7 +87,7 @@ export class ImageBoxComponent implements OnInit {
   }
 
   setInitialFields() {
-    return [{
+    this.inputFields =  [{
       step:1,
       prompt:'Tell us where you are',
       inputBox:'this.location'
@@ -98,6 +102,23 @@ export class ImageBoxComponent implements OnInit {
       prompt:'Say good morning',
       inputBox:''
     },
-  ]
+  ];
+  this.slideshowText = [
+    {value:1, display:'Global Good Morning is a project\b Collecting good mornings from\b around the world'},
+    {value:2, display:'We hope to hear as many people,\b languages, time zones and voices\b as possible. When we get enough,\b we’ll make a sculpture that helps a\b viewer feel the turning of the\b earth. '},
+    {value:3, display:'It doesn’t matter when you wake\b up or when your morning is. We\b just want to hear your voice, know\b the time and where you are in the\b world.'},]
   }
+  changeSlide(n) {
+    this.showSlide(this.slideIndex += n);
+  }
+
+  showSlide(n) {
+    if(n > this.slideshowText.length - 1) {
+      this.slideIndex = 0;
+    }
+    if (n < 0) {
+      this.slideIndex = this.slideshowText.length - 1;
+    }
+  }
+  
 }

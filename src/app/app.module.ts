@@ -8,12 +8,14 @@ import { Ng4GeoautocompleteModule } from 'ng4-geoautocomplete';
 import { AppComponent } from './app.component';
 import { ImageBoxComponent } from './components/image-box/image-box.component';
 import { InputSectionsComponent } from './input-sections/input-sections.component';
+import { NgbdCarouselBasicComponent } from './ngbd-carousel-basic/ngbd-carousel-basic.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ImageBoxComponent,
-    InputSectionsComponent
+    InputSectionsComponent,
+    NgbdCarouselBasicComponent
   ],
   imports: [
     NgbModule.forRoot(),

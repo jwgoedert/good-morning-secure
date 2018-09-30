@@ -11,69 +11,51 @@
   </div>
   <div class="col-md-5 topRightBoxes">
     <div>
-      <img class="img-responsive boundingBox topRightBoxes" src="assets/images/CraigD-Image-TopRight.jpg">
-      <div class="overlayNoBorder centered">
+      <app-ngbd-carousel-basic></app-ngbd-carousel-basic>
+      <!-- <img class="img-responsive boundingBox topRightBoxes" src="assets/images/CraigD-Image-TopRight.jpg">
+      <div class="overlayNoBorder centered" (click)="changeSlide(slideIndex)">
+          <div class="overlayNoBorder centered">
           <div class="normalTitle">
-              <p>Hi</p>
-              <p class="splashText">Global Good Morning is a project<br> collecting good mornings from <br> around the world.</p>
+              <button class="w3-button w3-white w3-display-left" (click)="changeSlide(-1)">&#10094;</button>
+              <p *ngIf="slideIndex==0">Hi</p>
+              <p class="splashText">{{slideshowText[slideIndex].display}}</p>
             </div>
-        </div>
+            <button class="w3-button w3-white w3-display-right" (click)="changeSlide(1)">&#10095;</button>
+          </div> -->
     </div>
     <div class="topRightBoxes lowerBox">
       <p class="lowerPadding">I want<br> to add<br> my own<br> personal<br> good <br>morning.</p>
       <a>Link to Something</a>
     </div>
   </div>
-  <div class="row inputColumns">
-    <!-- <div class="col-md-4 sectionHeight inputColumns">
-      <h1>STEP</h1>
-      <h1 class="circleText">1</h1>
-      <p>Tell us where you are.</p>
-      Country{{location}}
-      <ng4geo-autocomplete (componentCallback)="autoCompleteCallback($event)"></ng4geo-autocomplete>'
-    </div> -->
-    <!-- <div class="col-md-4 sectionHeight inputColumns">
-      <app-input-sections (messageEvent)="receiveMessage($event)"></app-input-sections>
-    </div> -->
-    <div class="col-md-4 sectionHeight inputColumns">
+  <div class="row inputColumns" >
+    <div class="col-md-4 sectionHeight inputColumns" *ngFor="let field of inputFields">
+      <p>{{field.prompt}}</p>
       <app-input-sections 
         (locationEvent)="getLocation($event)"
-        [locTest]="location"
+        [prompt]="field.prompt"
       >
       </app-input-sections>
     </div>
-    <div class="col-md-4 sectionHeight inputColumns">
+
+
+
+
+ <!-- <div class="col-md-4 sectionHeight inputColumns">
       <app-input-sections 
         (timeEvent)="getTime($event)"
-      >
+        [timePrompt]
+        >
       </app-input-sections>
     </div>
     <div class="col-md-4 sectionHeight inputColumns">
       <app-input-sections 
         (recordingEvent)="getRecording($event)"
-      >
-      </app-input-sections>
-    </div>
-<!-- 
-    <div class="col-md-4 sectionHeight inputColumns">
-        <h1>STEP</h1>
-        <h1 class="circleText">2</h1>
-        <p>Tell us when you wake up.</p>
-      {{ dateObj | date:'shortTime' }}
-      </div>
-      <div class="col-md-4 sectionHeight inputColumns">
-          <h1>STEP</h1>
-          <h1 class="circleText">1</h1>
-          <p>Say good morning.</p>
-        Record/Submit
-      </div> -->
+        [recordingPrompt]
+        > -->
 
-      <!-- <div class="col-md-12 sectionHeight boundingBox container">
-        <img class="img-responsive" src="assets/images/CraigD-image-email.jpg">        
-        <div class="overlayText splashTitle">
-          Thank You and Good Morning
-        </div>
-      </div> -->
+      <!-- </app-input-sections>
+    </div> -->
       <div class="container col-md-12">
           <img class="img-responsive boundingBox mainImage" src="assets/images/CraigD-image-email.jpg">
           <div class="overlayNoBorder centered">
