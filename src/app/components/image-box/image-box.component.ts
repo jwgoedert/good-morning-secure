@@ -14,6 +14,8 @@ export class ImageBoxComponent implements OnInit {
   public message;
   public inputFields;
   public slideshowText;
+  public lowerToggle = true;
+  public lowerText;
   public slideIndex = 0;
   public errorMsg: string; 
   public currentLocation: Coordinates = null;
@@ -29,6 +31,7 @@ export class ImageBoxComponent implements OnInit {
     this.searchByCurrent();
     this.getCurrentLocation();
     this.setInitialFields();
+    this.toggleAbout();
   }
   getCurrentLocation() {
     console.log('location', this.location);
@@ -110,6 +113,28 @@ export class ImageBoxComponent implements OnInit {
   }
   changeSlide(n) {
     this.showSlide(this.slideIndex += n);
+  }
+
+  toggleAbout() {
+    if (this.lowerToggle === true) {
+      this.lowerText = `Global Good Mornings is a project by Craig Damrauer. You can look at more of my work at Assorted Bits of Wisdom.
+
+      This project is an outgrowth of something I’ve been pondering for a while. I’m interested in whether I can make something that helps a viewer viscerally intuit the turning of the earth.
+      
+      I think a really interesting way to do this is to through people. At every moment on earth someone is waking up and headed into the day ahead. If there’s a way to capture these voices there might be a way to allow us to feel the day’s progress as the earth turns.
+      
+      It’s going to need multiple sets of voices from every timezone in the world. I’d love it to represent the young, the old and everybody in between. I’d love it to represent different languages, different points of view, different modes of waking up.
+      
+      Drop a line, if you want to talk about this, have ideas or just want to be kept up to date with the progress.
+      
+      GlobalGoodMorning @ gmail.com`
+      this.lowerToggle = false;
+    }
+    if(this.lowerToggle === false) {
+      this.lowerText =    `(this will evolve)     Site Design: Brian Carley  Programming: James Goedert, Antoine xxx  Photos: Unsplash.com`
+      this.lowerToggle = true;
+    }
+
   }
 
   showSlide(n) {

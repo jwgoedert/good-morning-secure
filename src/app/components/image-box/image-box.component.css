@@ -99,12 +99,13 @@
     content: '';
     height: 100%; 
     width: 1px;
-  
     position: absolute;
     right: 0;
     top: 0; 
-    
-  
-    background-color: #000000; 
- 
+    background-color: #000000;  
+}
+
+.about {
+    background-color: white;
+    color: black;
 }

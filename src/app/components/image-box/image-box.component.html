@@ -1,5 +1,4 @@
 <div class="row">
-  <!-- <div class="boundingBox col-md-6"> -->
     <div class="container col-md-7">
     <img class="img-responsive boundingBox mainImage" src="assets/images/Craig_photo_spaceman.jpg">
     <div class="overlayText centered">
@@ -12,16 +11,6 @@
   <div class="col-md-5 topRightBoxes">
     <div>
       <app-ngbd-carousel-basic></app-ngbd-carousel-basic>
-      <!-- <img class="img-responsive boundingBox topRightBoxes" src="assets/images/CraigD-Image-TopRight.jpg">
-      <div class="overlayNoBorder centered" (click)="changeSlide(slideIndex)">
-          <div class="overlayNoBorder centered">
-          <div class="normalTitle">
-              <button class="w3-button w3-white w3-display-left" (click)="changeSlide(-1)">&#10094;</button>
-              <p *ngIf="slideIndex==0">Hi</p>
-              <p class="splashText">{{slideshowText[slideIndex].display}}</p>
-            </div>
-            <button class="w3-button w3-white w3-display-right" (click)="changeSlide(1)">&#10095;</button>
-          </div> -->
     </div>
     <div class="topRightBoxes lowerBox">
       <p class="lowerPadding">I want<br> to add<br> my own<br> personal<br> good <br>morning.</p>
@@ -37,6 +26,7 @@
       >
       </app-input-sections>
     </div>
+  </div>
 
 
 
@@ -55,33 +45,24 @@
         > -->
 
       <!-- </app-input-sections>
-    </div> -->
-      <div class="container col-md-12">
-          <img class="img-responsive boundingBox mainImage" src="assets/images/CraigD-image-email.jpg">
-          <div class="overlayNoBorder centered">
+      </div> -->
+    <div class="container col-md-12">
+      <img class="img-responsive boundingBox mainImage" src="assets/images/CraigD-image-email.jpg">
+      <div class="overlayNoBorder centered">
             <div class="normalTitle">
-                <p>Thank You and Good Morning</p>
-                <!-- <p class="splashText">A good morning is anything you say<br>to greet your day. It's the first greeting.</p> -->
+              <p>Thank You and Good Morning</p>
+              <p class="splashText">A good morning is anything you say<br>to greet your day. It's the first greeting.</p>
             </div>
           </div>
         </div>
-
-      <div class="col-md-6 sectionHeight normalTitle">
-        <p>About</p>
-        <p>The</p>
-        <p>Project</p>
-      </div>
-      <div class="col-md-6 sectionHeight">
-        <p>Global Good Mornings is a project by Craig Damrauer. You can look at more of my work at Assorted Bits of Wisdom.
-
-            This project is an outgrowth of something I’ve been pondering for a while. I’m interested in whether I can make something that helps a viewer viscerally intuit the turning of the earth.
-            
-            I think a really interesting way to do this is to through people. At every moment on earth someone is waking up and headed into the day ahead. If there’s a way to capture these voices there might be a way to allow us to feel the day’s progress as the earth turns.
-            
-            It’s going to need multiple sets of voices from every timezone in the world. I’d love it to represent the young, the old and everybody in between. I’d love it to represent different languages, different points of view, different modes of waking up.
-            
-            Drop a line, if you want to talk about this, have ideas or just want to be kept up to date with the progress.
-            
-            GlobalGoodMorning @ gmail.com</p>
-      </div>
+  <div (click)="toggleAbout()">
+    <div class="col-md-6 sectionHeight normalTitle about">
+      <p>About</p>
+      <p>The</p>
+      <p>Project</p>
+    </div>
+    <div class="col-md-6 sectionHeight about">
+      <p class="about">{{lowerText}}</p>
+    </div>
+  </div>
   </div>
