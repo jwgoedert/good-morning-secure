@@ -17,14 +17,20 @@
       <a>Link to Something</a>
     </div>
   </div>
+  </div>
   <div class="row inputColumns" >
     <div class="col-md-4 sectionHeight inputColumns" *ngFor="let field of inputFields">
-      <p>{{field.prompt}}</p>
-      <app-input-sections 
+      <p class="step">STEP</p>
+      <div class="circleText">
+        <p>{{field.step}}</p>
+      </div>
+      <p class="instructions">{{field.prompt}}</p>
+      <img class="icon img-responsive" src={{field.svg}}>
+      <!-- <app-input-sections *ngFor="let field of inputFields"
         (locationEvent)="getLocation($event)"
         [prompt]="field.prompt"
-      >
-      </app-input-sections>
+      > 
+      </app-input-sections> -->
     </div>
   </div>
 
@@ -55,7 +61,7 @@
             </div>
           </div>
         </div>
-  <div (click)="toggleAbout()">
+  <div class="row" (click)="toggleAbout()">
     <div class="col-md-6 sectionHeight normalTitle about">
       <p>About</p>
       <p>The</p>
@@ -64,5 +70,4 @@
     <div class="col-md-6 sectionHeight about">
       <p class="about">{{lowerText}}</p>
     </div>
-  </div>
   </div>

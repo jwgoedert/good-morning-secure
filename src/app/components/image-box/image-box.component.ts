@@ -93,17 +93,20 @@ export class ImageBoxComponent implements OnInit {
     this.inputFields =  [{
       step:1,
       prompt:'Tell us where you are',
-      inputBox:'this.location'
+      inputBox:'this.location',
+      svg: 'assets/images/round-language-24px.svg'
     },
     {
       step:2,
       prompt:'Tell us when you wake up',
-      inputBox:'this.time'
+      inputBox:'this.time',
+      svg: 'assets/images/round-access_time-24px.svg'
     },
     {
       step:3,
       prompt:'Say good morning',
-      inputBox:''
+      inputBox:'',
+      svg: 'assets/images/round-mic-24px.svg'
     },
   ];
   this.slideshowText = [

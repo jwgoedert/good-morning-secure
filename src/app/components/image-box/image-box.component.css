@@ -86,14 +86,15 @@
 }
 .circleText {
     border-radius: 50%;
-    border-color: white;
-    border-width: 1px;
+    border: 1px solid white;
+    width: 48px;
+    height:48px;    
 }
 .inputColumns {
-    positiong:relative;
+    position:relative;
     /* border-right: solid 2px white; */
 }
-.inputColumns: after {
+.inputColumns::after {
     /* positiong:relative; */
     /* border-right: solid 2px white; */
     content: '';
@@ -108,4 +109,14 @@
 .about {
     background-color: white;
     color: black;
+}
+.icon {
+    color:white;
+    width: 64px;
+}
+.step {
+    font-size: 48px;
+}
+.instructions {
+    font-size: 32px;
 }
