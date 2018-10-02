@@ -26,7 +26,15 @@
       </div>
       <p class="instructions">{{field.prompt}}</p>
       <img class="icon img-responsive" src={{field.svg}}>
-      <ng4geo-autocomplete *ngIf="field.step === 1" (componentCallback)="autoCompleteCallback($event)"></ng4geo-autocomplete>'
+      <div class="location" *ngIf="field.step === 1">
+        <ng4geo-autocomplete  (componentCallback)="autoCompleteCallback($event)"></ng4geo-autocomplete>'
+      </div>
+      <div class="time" *ngIf="field.step === 2">
+        <app-time-picker></app-time-picker>
+      </div>
+      <div class="audio">
+
+      </div>
       <!-- <app-input-sections *ngFor="let field of inputFields"
         (locationEvent)="getLocation($event)"
         [prompt]="field.prompt"

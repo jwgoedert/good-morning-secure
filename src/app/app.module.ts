@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { ImageBoxComponent } from './components/image-box/image-box.component';
 import { InputSectionsComponent } from './input-sections/input-sections.component';
 import { NgbdCarouselBasicComponent } from './ngbd-carousel-basic/ngbd-carousel-basic.component';
+import { TimePickerComponent } from './time-picker/time-picker.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ImageBoxComponent,
     InputSectionsComponent,
-    NgbdCarouselBasicComponent
+    NgbdCarouselBasicComponent,
+    TimePickerComponent
   ],
   imports: [
     NgbModule.forRoot(),
