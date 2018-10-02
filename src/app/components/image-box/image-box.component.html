@@ -26,6 +26,7 @@
       </div>
       <p class="instructions">{{field.prompt}}</p>
       <img class="icon img-responsive" src={{field.svg}}>
+      <ng4geo-autocomplete *ngIf="field.step === 1" (componentCallback)="autoCompleteCallback($event)"></ng4geo-autocomplete>'
       <!-- <app-input-sections *ngFor="let field of inputFields"
         (locationEvent)="getLocation($event)"
         [prompt]="field.prompt"

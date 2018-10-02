@@ -93,8 +93,9 @@ export class ImageBoxComponent implements OnInit {
     this.inputFields =  [{
       step:1,
       prompt:'Tell us where you are',
-      inputBox:'this.location',
-      svg: 'assets/images/round-language-24px.svg'
+      inputBox:'<ng4geo-autocomplete (componentCallback)="autoCompleteCallback($event)"></ng4geo-autocomplete>',
+      svg: 'assets/images/round-language-24px.svg',
+      
     },
     {
       step:2,
