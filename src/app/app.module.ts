@@ -10,6 +10,7 @@ import { ImageBoxComponent } from './components/image-box/image-box.component';
 import { InputSectionsComponent } from './input-sections/input-sections.component';
 import { NgbdCarouselBasicComponent } from './ngbd-carousel-basic/ngbd-carousel-basic.component';
 import { TimePickerComponent } from './time-picker/time-picker.component';
+import { AudioComponent } from './audio/audio.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TimePickerComponent } from './time-picker/time-picker.component';
     ImageBoxComponent,
     InputSectionsComponent,
     NgbdCarouselBasicComponent,
-    TimePickerComponent
+    TimePickerComponent,
+    AudioComponent
   ],
   imports: [
     NgbModule.forRoot(),

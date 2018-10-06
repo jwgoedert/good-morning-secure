@@ -106,7 +106,7 @@ export class ImageBoxComponent implements OnInit {
     {
       step:3,
       prompt:'Say good morning',
-      inputBox:'',
+      inputBox:'<app-audio></app-audio>',
       svg: 'assets/images/round-mic-24px.svg'
     },
   ];
