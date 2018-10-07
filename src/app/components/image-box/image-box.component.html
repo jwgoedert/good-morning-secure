@@ -32,8 +32,8 @@
       <div class="time" *ngIf="field.step === 2">
         <app-time-picker></app-time-picker>
       </div>
-      <div class="audio">
-          <app-audio></app-audio>
+      <div class="audio" *ngIf="field.step === 3">
+        <app-audio></app-audio>
       </div>
     </div>
   </div>
